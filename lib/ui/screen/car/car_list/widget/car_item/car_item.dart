@@ -1,6 +1,5 @@
 import 'package:circuit_record/entity/car/car.dart';
 import 'package:circuit_record/routes/routes.dart';
-import 'package:circuit_record/ui/screen/car/car_list/car_list_screen_viewmodel.dart';
 import 'package:circuit_record/ui/screen/car/car_list/widget/car_item/car_item_viewmodel.dart';
 import 'package:circuit_record/ui/theme/style.dart';
 import 'package:flutter/material.dart';
