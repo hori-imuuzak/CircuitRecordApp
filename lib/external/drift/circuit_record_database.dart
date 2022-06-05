@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:circuit_record/external/drift/car_operation.dart';
 import 'package:circuit_record/external/drift/model/cars.dart';
 import 'package:circuit_record/external/drift/model/raceways.dart';
+import 'package:circuit_record/external/drift/raceway_operation.dart';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path/path.dart' as path;
@@ -13,9 +14,11 @@ part 'circuit_record_database.g.dart';
 @DriftDatabase(tables: [Cars, Raceways])
 class CircuitRecordDatabase extends _$CircuitRecordDatabase {
   late final CarOperation carOperation;
+  late final RacewayOperation racewayOperation;
 
   CircuitRecordDatabase() : super(_openConnection()) {
     carOperation = CarOperation(this);
+    racewayOperation = RacewayOperation(this);
   }
 
   @override
