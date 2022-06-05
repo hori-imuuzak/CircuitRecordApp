@@ -1,5 +1,6 @@
 import 'package:circuit_record/entity/car/car.dart';
 import 'package:circuit_record/routes/routes.dart';
+import 'package:circuit_record/ui/screen/car/car_list/car_list_screen_viewmodel.dart';
 import 'package:circuit_record/ui/screen/car/car_list/widget/car_item/car_item_viewmodel.dart';
 import 'package:circuit_record/ui/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +8,13 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class CarItem extends HookConsumerWidget {
   final Car car;
+  final CarListScreenViewModel carScreenViewModel;
 
-  const CarItem({Key? key, required this.car}) : super(key: key);
+  const CarItem({
+    Key? key,
+    required this.car,
+    required this.carScreenViewModel,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,8 +24,12 @@ class CarItem extends HookConsumerWidget {
       margin: EdgeInsets.symmetric(horizontal: Style.spacing.small),
       child: Card(
         child: InkWell(
-          onTap: () {
-            Navigator.of(context).push(Routes.editCar());
+          onTap: () async {
+            final deletedCar =
+                await Navigator.of(context).push(Routes.editCar(car));
+            if (deletedCar != null && deletedCar is Car) {
+              carScreenViewModel.getCars();
+            }
           },
           child: Padding(
             padding: EdgeInsets.all(Style.spacing.medium),

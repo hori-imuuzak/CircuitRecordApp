@@ -26,4 +26,8 @@ class CarListScreenViewModel extends ViewModel<CarListState> {
     final car = await _carRepository.create(const Car());
     state = state.addCar(car);
   }
+
+  Future<void> deleteCar(Car car) async {
+    state = state.deleteCar(car);
+  }
 }

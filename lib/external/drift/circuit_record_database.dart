@@ -25,6 +25,22 @@ class CircuitRecordDatabase extends _$CircuitRecordDatabase {
     return entity.copyWith(id: id);
   }
 
+  Future<bool> updateCar(e_car.Car entity) {
+    return update(cars).replace(
+      Car(
+        id: entity.id,
+        name: entity.name,
+        memo: entity.memo,
+      ),
+    );
+  }
+
+  Future<bool> deleteCar(e_car.Car entity) async {
+    final result =
+        await (delete(cars)..where((t) => t.id.equals(entity.id))).go();
+    return result >= 0;
+  }
+
   @override
   int get schemaVersion => 1;
 }

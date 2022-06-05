@@ -26,12 +26,15 @@ class CarListScreen extends HookConsumerWidget {
           SizedBox(height: Style.spacing.medium),
           Visibility(
             visible: state.isVisibleEmpty,
-            child: const Text("車両が登録されていません。"),
+            child: const Text("車両がありません。"),
           ),
           ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemBuilder: (context, index) => CarItem(car: state.cars[index]),
+            itemBuilder: (context, index) => CarItem(
+              car: state.cars[index],
+              carScreenViewModel: viewModel,
+            ),
             itemCount: state.cars.length,
           ),
           ListItemAddButton(

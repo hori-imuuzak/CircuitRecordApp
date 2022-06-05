@@ -6,6 +6,10 @@ abstract class CarRepository {
   Future<List<Car>> findAll();
 
   Future<Car> create(Car car);
+
+  Future<bool> update(Car car);
+
+  Future<bool> delete(Car car);
 }
 
 class CarRepositoryDatabase extends CarRepository {
@@ -30,5 +34,16 @@ class CarRepositoryDatabase extends CarRepository {
   @override
   Future<Car> create(Car car) async {
     return database.addCar(car);
+  }
+
+  @override
+  Future<bool> update(Car car) {
+    // TODO: implement update
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> delete(Car car) {
+    return database.deleteCar(car);
   }
 }

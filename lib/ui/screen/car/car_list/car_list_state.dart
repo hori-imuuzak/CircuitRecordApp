@@ -15,5 +15,9 @@ class CarListState with _$CarListState {
     return copyWith(cars: [...cars, car]);
   }
 
+  CarListState deleteCar(Car car) {
+    return copyWith(cars: cars.where((e) => e.id != car.id).toList());
+  }
+
   bool get isVisibleEmpty => cars.isEmpty;
 }

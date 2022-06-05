@@ -13,7 +13,7 @@ class RacewayListScreen extends HookConsumerWidget {
       body: Column(
         children: [
           SizedBox(height: Style.spacing.medium),
-          const Text("コースが登録されていません。"),
+          const Text("コースがありません。"),
           ListItemAddButton(
             onTap: () {},
           ),
