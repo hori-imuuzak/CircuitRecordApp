@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:circuit_record/entity/car/car.dart' as e_car;
 import 'package:circuit_record/external/drift/model/cars.dart';
+import 'package:circuit_record/external/drift/model/raceways.dart';
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:path_provider/path_provider.dart';
@@ -9,7 +10,7 @@ import 'package:path/path.dart' as path;
 
 part 'circuit_record_database.g.dart';
 
-@DriftDatabase(tables: [Cars])
+@DriftDatabase(tables: [Cars, Raceways])
 class CircuitRecordDatabase extends _$CircuitRecordDatabase {
   CircuitRecordDatabase() : super(_openConnection());
 
