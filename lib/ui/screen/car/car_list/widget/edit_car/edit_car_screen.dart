@@ -1,4 +1,5 @@
 import 'package:circuit_record/entity/car/car.dart';
+import 'package:circuit_record/ui/screen/car/car_list/car_list_screen_viewmodel.dart';
 import 'package:circuit_record/ui/screen/car/car_list/widget/edit_car/edit_car_screen_viewmodel.dart';
 import 'package:circuit_record/ui/theme/style.dart';
 import 'package:circuit_record/ui/util/appbar/AppBarActionConfirmButton.dart';
@@ -16,6 +17,8 @@ class EditCarScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final viewModel = ref.read(editCarScreenViewModelProvider(car).notifier);
+    final carListScreenViewModel =
+        ref.read(carListScreenViewModelProvider.notifier);
 
     final name = useTextEditingController(text: car.name);
     final memo = useTextEditingController(text: car.memo);
@@ -31,6 +34,7 @@ class EditCarScreen extends HookConsumerWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("削除しました。")),
                 );
+                carListScreenViewModel.getCars();
               }
             }),
             AppBarActionConfirmButton(onPressed: () {}),

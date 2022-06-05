@@ -8,12 +8,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class CarItem extends HookConsumerWidget {
   final Car car;
-  final CarListScreenViewModel carScreenViewModel;
 
   const CarItem({
     Key? key,
     required this.car,
-    required this.carScreenViewModel,
   }) : super(key: key);
 
   @override
@@ -24,12 +22,8 @@ class CarItem extends HookConsumerWidget {
       margin: EdgeInsets.symmetric(horizontal: Style.spacing.small),
       child: Card(
         child: InkWell(
-          onTap: () async {
-            final deletedCar =
-                await Navigator.of(context).push(Routes.editCar(car));
-            if (deletedCar != null && deletedCar is Car) {
-              carScreenViewModel.getCars();
-            }
+          onTap: () {
+            Navigator.of(context).push(Routes.editCar(car));
           },
           child: Padding(
             padding: EdgeInsets.all(Style.spacing.medium),

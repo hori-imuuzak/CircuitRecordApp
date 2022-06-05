@@ -31,10 +31,7 @@ class CarListScreen extends HookConsumerWidget {
           ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            itemBuilder: (context, index) => CarItem(
-              car: state.cars[index],
-              carScreenViewModel: viewModel,
-            ),
+            itemBuilder: (context, index) => CarItem(car: state.cars[index]),
             itemCount: state.cars.length,
           ),
           ListItemAddButton(
