@@ -22,4 +22,8 @@ class EditCarScreenViewModel extends ViewModel<EditCarState> {
   Future<bool> deleteCar() async {
     return await _carRepository.delete(state.car);
   }
+
+  Future<bool> updateCar(Car car) async {
+    return await _carRepository.update(car);
+  }
 }

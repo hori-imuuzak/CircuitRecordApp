@@ -31,6 +31,7 @@ class CarItem extends HookConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(viewModel.textId),
+                SizedBox(height: Style.spacing.small),
                 Row(
                   children: [
                     Icon(
@@ -44,6 +45,7 @@ class CarItem extends HookConsumerWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: Style.spacing.small),
                 const Text(
                   "メモ",
                   style: TextStyle(fontSize: 12.0),
@@ -51,6 +53,8 @@ class CarItem extends HookConsumerWidget {
                 Text(
                   viewModel.memo,
                   style: TextStyle(color: viewModel.nameColor),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),

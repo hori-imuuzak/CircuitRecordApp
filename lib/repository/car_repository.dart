@@ -38,8 +38,7 @@ class CarRepositoryDatabase extends CarRepository {
 
   @override
   Future<bool> update(Car car) {
-    // TODO: implement update
-    throw UnimplementedError();
+    return database.updateCar(car);
   }
 
   @override

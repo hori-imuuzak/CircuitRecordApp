@@ -19,5 +19,9 @@ class CarListState with _$CarListState {
     return copyWith(cars: cars.where((e) => e.id != car.id).toList());
   }
 
+  CarListState updateCar(Car car) {
+    return copyWith(cars: cars.map((e) => e.id == car.id ? car : e).toList());
+  }
+
   bool get isVisibleEmpty => cars.isEmpty;
 }

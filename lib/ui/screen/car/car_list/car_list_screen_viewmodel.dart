@@ -30,4 +30,8 @@ class CarListScreenViewModel extends ViewModel<CarListState> {
   Future<void> deleteCar(Car car) async {
     state = state.deleteCar(car);
   }
+
+  Future<void> updateCar(Car car) async {
+    state = state.updateCar(car);
+  }
 }

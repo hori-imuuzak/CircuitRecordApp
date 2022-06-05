@@ -30,14 +30,23 @@ class EditCarScreen extends HookConsumerWidget {
           actions: [
             AppBarActionDeleteButton(onPressed: () async {
               if (await viewModel.deleteCar() == true) {
-                Navigator.of(context).maybePop(car);
+                Navigator.of(context).maybePop();
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("削除しました。")),
                 );
                 carListScreenViewModel.deleteCar(car);
               }
             }),
-            AppBarActionConfirmButton(onPressed: () {}),
+            AppBarActionConfirmButton(onPressed: () async {
+              final update = car.copyWith(name: name.text, memo: memo.text);
+              if (await viewModel.updateCar(update) == true) {
+                Navigator.of(context).maybePop();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("更新しました。")),
+                );
+                carListScreenViewModel.updateCar(update);
+              }
+            }),
           ],
         ),
         body: Padding(
