@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
+              actionsIconTheme: IconThemeData(color: Colors.white),
+              iconTheme: IconThemeData(color: Colors.white),
             ),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               selectedLabelStyle: TextStyle(fontSize: 10.0),

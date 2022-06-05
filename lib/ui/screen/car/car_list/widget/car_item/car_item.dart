@@ -1,4 +1,5 @@
 import 'package:circuit_record/entity/car/car.dart';
+import 'package:circuit_record/routes/routes.dart';
 import 'package:circuit_record/ui/screen/car/car_list/widget/car_item/car_item_viewmodel.dart';
 import 'package:circuit_record/ui/theme/style.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,9 @@ class CarItem extends HookConsumerWidget {
       margin: EdgeInsets.symmetric(horizontal: Style.spacing.small),
       child: Card(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(Routes.editCar());
+          },
           child: Padding(
             padding: EdgeInsets.all(Style.spacing.medium),
             child: Column(
