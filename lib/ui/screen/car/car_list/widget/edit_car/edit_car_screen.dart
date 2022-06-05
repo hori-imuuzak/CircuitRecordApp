@@ -34,7 +34,7 @@ class EditCarScreen extends HookConsumerWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("削除しました。")),
                 );
-                carListScreenViewModel.getCars();
+                carListScreenViewModel.deleteCar(car);
               }
             }),
             AppBarActionConfirmButton(onPressed: () {}),
