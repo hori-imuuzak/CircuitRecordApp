@@ -19,7 +19,7 @@ class CarRepositoryDatabase extends CarRepository {
 
   @override
   Future<List<Car>> findAll() async {
-    final cars = await database.selectAllCars;
+    final cars = await database.carOperation.selectAll;
     return cars
         .map(
           (e) => Car(
@@ -33,16 +33,16 @@ class CarRepositoryDatabase extends CarRepository {
 
   @override
   Future<Car> create(Car car) async {
-    return database.addCar(car);
+    return database.carOperation.add(car);
   }
 
   @override
   Future<bool> update(Car car) {
-    return database.updateCar(car);
+    return database.carOperation.update(car);
   }
 
   @override
   Future<bool> delete(Car car) {
-    return database.deleteCar(car);
+    return database.carOperation.delete(car);
   }
 }
