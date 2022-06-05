@@ -17,6 +17,13 @@ class MyApp extends StatelessWidget {
         title: 'CircuitRecord',
         theme: ThemeData(
             primarySwatch: Colors.orange,
+            appBarTheme: const AppBarTheme(
+              titleTextStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               selectedLabelStyle: TextStyle(fontSize: 10.0),
               unselectedLabelStyle: TextStyle(fontSize: 10.0),

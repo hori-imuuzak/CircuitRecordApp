@@ -1,4 +1,6 @@
+import 'package:circuit_record/ui/screen/car/car_list/car_list_screen.dart';
 import 'package:circuit_record/ui/screen/home/home_screen_Viewmodel.dart';
+import 'package:circuit_record/ui/screen/raceway/raceway_list/raceway_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -11,9 +13,15 @@ class HomeScreen extends HookConsumerWidget {
     final state = ref.watch(homeScreenViewModelProvider);
 
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [],
+      body: IndexedStack(
+        index: state.tabIndex,
+        children: const [
+          Text("1"),
+          Text("2"),
+          Text("3"),
+          CarListScreen(),
+          RacewayListScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
