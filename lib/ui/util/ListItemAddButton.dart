@@ -2,6 +2,10 @@ import 'package:circuit_record/ui/theme/style.dart';
 import 'package:flutter/material.dart';
 
 class ListItemAddButton extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const ListItemAddButton({Key? key, required this.onTap}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -10,7 +14,7 @@ class ListItemAddButton extends StatelessWidget {
         color: Colors.white,
         child: InkWell(
           borderRadius: BorderRadius.circular(Style.circular.listItem),
-          onTap: () {},
+          onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Style.circular.listItem),
@@ -21,10 +25,17 @@ class ListItemAddButton extends StatelessWidget {
             ),
             padding: EdgeInsets.all(Style.spacing.medium),
             child: Center(
-              child: Icon(
-                Icons.add_circle_outline,
-                size: Style.iconSize.medium,
-                color: Colors.orangeAccent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.add_circle_outline,
+                    size: Style.iconSize.medium,
+                    color: Colors.orangeAccent,
+                  ),
+                  SizedBox(width: Style.spacing.tiny),
+                  const Text("追加する"),
+                ],
               ),
             ),
           ),

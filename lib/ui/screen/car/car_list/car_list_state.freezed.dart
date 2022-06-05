@@ -88,8 +88,10 @@ class __$$_CarListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CarListState implements _CarListState {
-  const _$_CarListState({final List<Car> cars = const <Car>[]}) : _cars = cars;
+class _$_CarListState extends _CarListState {
+  const _$_CarListState({final List<Car> cars = const <Car>[]})
+      : _cars = cars,
+        super._();
 
   final List<Car> _cars;
   @override
@@ -122,8 +124,9 @@ class _$_CarListState implements _CarListState {
       __$$_CarListStateCopyWithImpl<_$_CarListState>(this, _$identity);
 }
 
-abstract class _CarListState implements CarListState {
+abstract class _CarListState extends CarListState {
   const factory _CarListState({final List<Car> cars}) = _$_CarListState;
+  const _CarListState._() : super._();
 
   @override
   List<Car> get cars => throw _privateConstructorUsedError;

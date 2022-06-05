@@ -14,7 +14,9 @@ class RacewayListScreen extends HookConsumerWidget {
         children: [
           SizedBox(height: Style.spacing.medium),
           const Text("コースが登録されていません。"),
-          ListItemAddButton(),
+          ListItemAddButton(
+            onTap: () {},
+          ),
         ],
       ),
     );

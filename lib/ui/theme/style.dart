@@ -23,6 +23,7 @@ class _Circular {
 }
 
 class _Spacing {
+  final tiny = 6.0;
   final small = 12.0;
   final medium = 16.0;
   final large = 24.0;
@@ -32,6 +33,7 @@ class _Spacing {
 
 class _Gray {
   final border = Colors.black38;
+  final caption = Colors.black45;
 
   const _Gray();
 }

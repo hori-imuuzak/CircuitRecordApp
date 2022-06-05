@@ -1,9 +1,12 @@
+import 'dart:ui';
+
 import 'package:circuit_record/ui/screen/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  DartPluginRegistrant.ensureInitialized();
 
   runApp(const MyApp());
 }
