@@ -22,7 +22,7 @@ class RacewayItem extends HookConsumerWidget {
       child: Card(
         child: InkWell(
           onTap: () {
-            // Navigator.of(context).push(Routes.editRaceway(raceway));
+            Navigator.of(context).push(Routes.editRaceway(raceway));
           },
           child: Padding(
             padding: EdgeInsets.all(Style.spacing.medium),
@@ -40,7 +40,7 @@ class RacewayItem extends HookConsumerWidget {
                     ),
                     Text(
                       viewModel.name,
-                      style: const TextStyle(color: Colors.black),
+                      style: TextStyle(color: viewModel.nameColor),
                     ),
                   ],
                 ),
