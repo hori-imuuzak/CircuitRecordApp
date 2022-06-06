@@ -70,7 +70,7 @@ class RacewayItem extends HookConsumerWidget {
                         ),
                       ],
                     ),
-                    OutlinedButton(onPressed: () {}, child: Text("攻略ポイントを編集する"))
+                    OutlinedButton(onPressed: () {}, child: const Text("攻略ポイントを編集する"))
                   ],
                 ),
               ],

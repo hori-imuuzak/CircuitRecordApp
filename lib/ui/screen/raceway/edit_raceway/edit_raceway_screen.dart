@@ -57,32 +57,70 @@ class EditRacewayScreen extends HookConsumerWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(Style.spacing.medium),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text("名称", style: TextStyle(fontSize: 10.0)),
-              TextFormField(controller: name, maxLength: 100),
-              const Text("郵便番号", style: TextStyle(fontSize: 10.0)),
-              Text(
-                "入力しておくことで天気予報が取得できます。",
-                style: TextStyle(
-                  fontSize: 10.0,
-                  color: Style.gray.caption,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("名称", style: TextStyle(fontSize: 10.0)),
+                TextFormField(controller: name, maxLength: 100),
+                const Text("郵便番号", style: TextStyle(fontSize: 10.0)),
+                Text(
+                  "入力しておくことで天気予報が取得できます。",
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    color: Style.gray.caption,
+                  ),
                 ),
-              ),
-              TextFormField(controller: postalCode, maxLength: 7),
-              const Text("住所", style: TextStyle(fontSize: 10.0)),
-              TextFormField(controller: address, maxLength: 200),
-              const Text("コースマップ", style: TextStyle(fontSize: 10.0)),
-              Text(
-                "登録しておくことで攻略ポイントがメモできます。",
-                style: TextStyle(
-                  fontSize: 10.0,
-                  color: Style.gray.caption,
+                TextFormField(controller: postalCode, maxLength: 7),
+                const Text("住所", style: TextStyle(fontSize: 10.0)),
+                TextFormField(controller: address, maxLength: 200),
+                const Text("コースマップ", style: TextStyle(fontSize: 10.0)),
+                Text(
+                  "登録しておくことで攻略ポイントがメモできます。",
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    color: Style.gray.caption,
+                  ),
                 ),
-              ),
-              OutlinedButton(onPressed: () {}, child: const Text("仮のボタン")),
-            ],
+                SizedBox(height: Style.spacing.small),
+                SizedBox(
+                  height: 200,
+                  child: InkWell(
+                    borderRadius:
+                        BorderRadius.circular(Style.circular.takePicture),
+                    onTap: () {},
+                    child: Material(
+                      borderRadius:
+                          BorderRadius.circular(Style.circular.takePicture),
+                      color: Colors.black12,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Style.circular.takePicture),
+                        ),
+                        padding: EdgeInsets.all(Style.spacing.medium),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.photo_library,
+                                size: Style.iconSize.small,
+                              ),
+                              SizedBox(width: Style.spacing.tiny),
+                              const Text(
+                                '画像を選択する',
+                                style: TextStyle(fontSize: 10.0),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

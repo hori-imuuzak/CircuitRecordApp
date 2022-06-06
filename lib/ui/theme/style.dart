@@ -18,6 +18,7 @@ class _IconSize {
 
 class _Circular {
   final listItem = 4.0;
+  final takePicture = 6.0;
 
   const _Circular();
 }

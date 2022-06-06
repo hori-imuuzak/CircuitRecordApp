@@ -31,6 +31,13 @@ class MyApp extends StatelessWidget {
               actionsIconTheme: IconThemeData(color: Colors.white),
               iconTheme: IconThemeData(color: Colors.white),
             ),
+            outlinedButtonTheme: OutlinedButtonThemeData(
+              style: ButtonStyle(
+                textStyle: MaterialStateProperty.all(
+                  const TextStyle(fontSize: 10.0),
+                ),
+              ),
+            ),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               selectedLabelStyle: TextStyle(fontSize: 10.0),
               unselectedLabelStyle: TextStyle(fontSize: 10.0),
