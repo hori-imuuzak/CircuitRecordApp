@@ -55,13 +55,23 @@ class RacewayItem extends HookConsumerWidget {
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const Text(
-                  "攻略ポイント数",
-                  style: TextStyle(fontSize: 12.0),
-                ),
-                Text(
-                  viewModel.strategyPointCountText,
-                  style: const TextStyle(color: Colors.black),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        const Text(
+                          "攻略ポイント数",
+                          style: TextStyle(fontSize: 12.0),
+                        ),
+                        Text(
+                          viewModel.strategyPointCountText,
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    OutlinedButton(onPressed: () {}, child: Text("攻略ポイントを編集する"))
+                  ],
                 ),
               ],
             ),
